@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:38:40 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/19 18:47:37 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/20 14:23:18 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,11 @@ extern int		ft_tolower(int c);
 extern char		*ft_strchr(const char *s, int c);
 extern char		*ft_strrchr(const char *s, int c);
 extern int		ft_strncmp(const char *s1, const char *s2, size_t n);
+extern void		*ft_memchr(const void *s, int c, size_t n);
+extern int		ft_memcmp(const char *s1, const char *s2, size_t n);
+extern char		*ft_strnstr(const char *big, const char *little, size_t len);
+extern int		ft_atoi(const char *nptr);
+extern void		*ft_calloc(size_t nmemb, size_t size);
+extern char		*ft_strdup(const char *s);
 
 #endif
