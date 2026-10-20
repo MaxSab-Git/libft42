@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:38:40 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/20 14:23:18 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/20 15:59:22 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ extern char		*ft_strnstr(const char *big, const char *little, size_t len);
 extern int		ft_atoi(const char *nptr);
 extern void		*ft_calloc(size_t nmemb, size_t size);
 extern char		*ft_strdup(const char *s);
+extern char		*ft_substr(char const *s, unsigned int start, size_t len);
+extern char		*ft_strjoin(char const *s1, char const *s2);
+extern char		*ft_strtrim(char const *s1, char const *set);
+extern char		**ft_split(char const *s, char c);
 
 #endif

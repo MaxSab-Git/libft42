@@ -24,6 +24,10 @@ SOURCES=ft_isalpha.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_split.c
 
 TESTSOURCES=main.c
 
@@ -35,7 +39,7 @@ $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 $(OBJS):%.o:%.c
-	$(COMPILER) $(FLAGS) -c $< -o $@
+	$(COMPILER) $(FLAGS) -g3 -c $< -o $@
 
 .PHONY: all clean fclean re test
 
@@ -49,5 +53,5 @@ re: fclean all
 
 test: all
 	norminette --use-gitignore
-	$(COMPILER) $(TESTSOURCES) -I./ -L./ -lft -lbsd
+	$(COMPILER) $(FLAGS) $(TESTSOURCES) -g3 -I./ -L./ -lft -lbsd
 	./a.out
