@@ -55,7 +55,7 @@ $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 $(OBJS):%.o:%.c
-	$(COMPILER) $(FLAGS) -g3 -c $< -o $@
+	$(COMPILER) $(FLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re test
 
@@ -69,5 +69,5 @@ re: fclean all
 
 test: all
 	norminette --use-gitignore
-	$(COMPILER) $(FLAGS) $(TESTSOURCES) -g3 -I./ -L./ -lft -lbsd
+	$(COMPILER) $(FLAGS) $(TESTSOURCES) -I./ -L./ -lft -lbsd
 	./a.out
