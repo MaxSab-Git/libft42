@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:38:40 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/21 13:31:06 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/21 14:23:25 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ extern void		ft_lstadd_back(t_list **lst, t_list *new);
 extern void		ft_lstdelone(t_list *lst, void (*del)(void*));
 extern void		ft_lstclear(t_list **lst, void (*del)(void*));
 extern void		ft_lstiter(t_list *lst, void (*f)(void *));
+extern t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 // libc copycats
 
