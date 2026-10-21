@@ -6,13 +6,32 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:38:40 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/20 15:59:22 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/21 13:31:06 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
+
+// linked list library
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+extern t_list	*ft_lstnew(void *content);
+extern void		ft_lstadd_front(t_list **lst, t_list *new);
+extern int		ft_lstsize(t_list *lst);
+extern t_list	*ft_lstlast(t_list *lst);
+extern void		ft_lstadd_back(t_list **lst, t_list *new);
+extern void		ft_lstdelone(t_list *lst, void (*del)(void*));
+extern void		ft_lstclear(t_list **lst, void (*del)(void*));
+extern void		ft_lstiter(t_list *lst, void (*f)(void *));
+
+// libc copycats
 
 extern int		ft_isalpha(int c);
 extern int		ft_isdigit(int c);
@@ -37,9 +56,19 @@ extern char		*ft_strnstr(const char *big, const char *little, size_t len);
 extern int		ft_atoi(const char *nptr);
 extern void		*ft_calloc(size_t nmemb, size_t size);
 extern char		*ft_strdup(const char *s);
+
+// some advanced functions
+
 extern char		*ft_substr(char const *s, unsigned int start, size_t len);
 extern char		*ft_strjoin(char const *s1, char const *s2);
 extern char		*ft_strtrim(char const *s1, char const *set);
 extern char		**ft_split(char const *s, char c);
+extern char		*ft_itoa(int n);
+extern char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+extern void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+extern void		ft_putchar_fd(char c, int fd);
+extern void		ft_putstr_fd(char *s, int fd);
+extern void		ft_putendl_fd(char *s, int fd);
+extern void		ft_putnbr_fd(int n, int fd);
 
 #endif
