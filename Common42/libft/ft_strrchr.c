@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:21:02 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/19 18:45:02 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/21 17:38:39 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			last = s;
 		s++;
 	}
+	if (*s == c)
+		last = s;
 	return ((char *)last);
 }

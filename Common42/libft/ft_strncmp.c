@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:47:55 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/19 19:00:41 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/21 18:53:32 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n - 1)
 	{
-		if (s1[i] != s2[i])
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
 			break ;
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

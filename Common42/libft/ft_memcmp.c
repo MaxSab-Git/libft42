@@ -6,13 +6,13 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:47:33 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/20 12:52:27 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/21 18:07:49 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_memcmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
