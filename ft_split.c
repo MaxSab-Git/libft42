@@ -6,14 +6,14 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:59:49 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/20 17:15:41 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/23 11:33:04 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-unsigned int	split_count(char const *s, char c)
+static unsigned int	split_count(char const *s, char c)
 {
 	unsigned int	strcount;
 	const char		*start;
@@ -30,6 +30,21 @@ unsigned int	split_count(char const *s, char c)
 		start = end + 1;
 	}
 	return (strcount);
+}
+
+static char	*insert_string(const char *st, const char *end,
+			char **splitted, unsigned int strcount)
+{
+	splitted[strcount] = malloc((size_t)(end - st + 1));
+	if (!splitted[strcount])
+	{
+		while (strcount > 0)
+			free(splitted[--strcount]);
+		free(splitted);
+		return (NULL);
+	}
+	ft_strlcpy(splitted[strcount], st, (size_t)(end - st + 1));
+	return (splitted[strcount]);
 }
 
 char	**ft_split(char const *s, char c)
@@ -52,8 +67,8 @@ char	**ft_split(char const *s, char c)
 			end = st + ft_strlen(st);
 		if (end != st)
 		{
-			splitted[strcount] = malloc((size_t)(end - st + 1) * sizeof(char));
-			ft_strlcpy(splitted[strcount++], st, (size_t)(end - st) + 1);
+			if (!insert_string(st, end, splitted, strcount++))
+				return (NULL);
 		}
 		st = end + 1;
 	}

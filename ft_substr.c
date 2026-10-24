@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 14:59:47 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/20 15:20:51 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/22 20:27:15 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	truelen;
 	char	*sub;
 
-	truelen = ft_strlen(s + start);
+	truelen = ft_strlen(s);
+	if (start > truelen)
+		truelen = 0;
+	else
+		truelen = ft_strlen(s + start);
 	if (truelen > len)
 		truelen = len;
 	sub = malloc((truelen + 1) * sizeof(char));
