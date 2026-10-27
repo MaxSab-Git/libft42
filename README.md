@@ -45,7 +45,7 @@ These are reimplementation of some standard C library function, you can find the
 - ft_atoi
 - ft_calloc
 - ft_strdup
-<br>
+
 Please note that 'ft_calloc' always return a valid unique pointer value when nmemb or size is 0, opposed to what you can see on the [man pages](https://man7.org/linux/man-pages/) documentation.
 
 <h2>Advanced functions</h2>

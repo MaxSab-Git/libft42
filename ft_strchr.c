@@ -6,7 +6,7 @@
 /*   By: mtoudic <mtoudic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:17:40 by mtoudic           #+#    #+#             */
-/*   Updated: 2026/10/19 18:32:45 by mtoudic          ###   ########.fr       */
+/*   Updated: 2026/10/26 11:32:51 by mtoudic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0' && *s != c)
+	while (*s != '\0' && *s != (char)c)
 		s++;
-	if (*s != c)
+	if (*s != (char)c)
 		return (NULL);
 	return ((char *)s);
 }
